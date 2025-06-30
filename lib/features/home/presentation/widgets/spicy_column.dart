@@ -4,9 +4,9 @@ import 'package:food_go/core/utils/colors.dart';
 
 class SpicyColumn extends StatefulWidget {
   const SpicyColumn({
-    super.key,
+    super.key, required this.width,
   });
-
+final double width;
   @override
   State<SpicyColumn> createState() => _SpicyColumnState();
 }
@@ -17,7 +17,7 @@ class _SpicyColumnState extends State<SpicyColumn> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width(context) * 0.4,
+      width: width(context) * widget.width,
       child: Column(
         children: [
           const Text(

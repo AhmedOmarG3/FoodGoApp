@@ -4,8 +4,8 @@ import 'package:food_go/core/utils/styles.dart';
 import 'package:food_go/features/home/presentation/widgets/portion_icon_button.dart';
 
 class PortionRow extends StatefulWidget {
-  const PortionRow({super.key});
-
+  const PortionRow({super.key, required this.horizontalPadding});
+final double horizontalPadding ;
   @override
   State<PortionRow> createState() => _PortionRowState();
 }
@@ -26,7 +26,7 @@ class _PortionRowState extends State<PortionRow> {
           icon: Icons.minimize,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding:  EdgeInsets.symmetric(horizontal: widget.horizontalPadding),
           child: Text(
             numberOfPortion.toString(),
             style: Styles.textStyle20
