@@ -6,18 +6,14 @@ class CustomGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: 4,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 3 / 3.5,
-            crossAxisSpacing: 4,
-            mainAxisSpacing: 5),
-        itemBuilder: (context, index) => const GridViewItem(),
-      ),
+    return SliverGrid.builder(
+      itemCount: 4,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 4,
+          mainAxisSpacing: 5,
+          childAspectRatio: 4 / 5),
+      itemBuilder: (context, index) => const GridViewItem(),
     );
   }
 }

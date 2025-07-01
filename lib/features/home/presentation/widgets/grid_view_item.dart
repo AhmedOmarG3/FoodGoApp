@@ -11,17 +11,20 @@ class GridViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(onTap: () {
-GoRouter.of(context).push(ProductDetailsView.routeName);
-    },
+    return InkWell(
+      onTap: () {
+        GoRouter.of(context).push(ProductDetailsView.routeName);
+      },
       child: Card(
         elevation: 5,
         child: Container(
-          padding: const EdgeInsets.only(left: 10, right: 10),
+          
+          padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               color: const Color(0xffFFFFFF)),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Image.asset(
               'assets/images/image 1.png',
               height: height(context) * 0.12,
@@ -37,7 +40,7 @@ GoRouter.of(context).push(ProductDetailsView.routeName);
             Text("Wendy's Burger",
                 style: Styles.textStyle20
                     .copyWith(fontSize: 14, color: kTextColor)),
-            FavoriteRow()
+            FavoriteRow(),
           ]),
         ),
       ),
