@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_go/core/utils/colors.dart';
-import 'package:food_go/features/payment/presentation/views/order_view.dart';
+import 'package:food_go/features/payment/presentation/views/payment_view.dart';
 import 'package:food_go/features/home/presentation/widgets/custom_button.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,7 +23,7 @@ class OrderRow extends StatelessWidget {
           ),
           CustomButton(
             onPressed: () {
-              GoRouter.of(context).push(OrdserView.routeName);
+              GoRouter.of(context).push(PaymentView.routeName);
             },
             wid: 0.4,
             heig: 0.07,

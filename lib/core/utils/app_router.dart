@@ -1,5 +1,5 @@
 import 'package:food_go/features/home/presentation/views/home_view.dart';
-import 'package:food_go/features/payment/presentation/views/order_view.dart';
+import 'package:food_go/features/payment/presentation/views/payment_view.dart';
 import 'package:food_go/features/home/presentation/views/product_details_view.dart';
 import 'package:food_go/features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
@@ -19,8 +19,8 @@ abstract class AppRouter {
         path: ProductDetailsView.routeName,
         builder: (context, state) => const ProductDetailsView(),
       ),GoRoute(
-        path: OrdserView.routeName,
-        builder: (context, state) => const OrdserView(),
+        path: PaymentView.routeName,
+        builder: (context, state) => const PaymentView(),
       ),
       // Add more routes here
     ],

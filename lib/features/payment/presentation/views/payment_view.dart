@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_go/features/payment/presentation/widgets/order_view_body.dart';
+import 'package:food_go/features/payment/presentation/widgets/payment_view_body.dart';
 
 class PaymentView extends StatelessWidget {
   const PaymentView({super.key});
