@@ -3,7 +3,7 @@ import 'package:food_go/core/constants/constants.dart';
 import 'package:food_go/core/utils/colors.dart';
 import 'package:food_go/core/utils/styles.dart';
 import 'package:food_go/features/home/presentation/widgets/custom_button.dart';
-import 'package:food_go/features/order/presentation/widgets/done_icon.dart';
+import 'package:food_go/features/payment/presentation/widgets/done_icon.dart';
 
 class SuccessDialog extends StatelessWidget {
   const SuccessDialog({super.key});

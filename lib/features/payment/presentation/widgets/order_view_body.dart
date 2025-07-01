@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:food_go/core/utils/colors.dart';
 import 'package:food_go/core/utils/styles.dart';
 import 'package:food_go/features/home/presentation/widgets/details_view_app_bar.dart';
-import 'package:food_go/features/order/presentation/widgets/paying_row.dart';
-import 'package:food_go/features/order/presentation/widgets/payment_column.dart';
-import 'package:food_go/features/order/presentation/widgets/price_details_section.dart';
+import 'package:food_go/features/payment/presentation/widgets/paying_row.dart';
+import 'package:food_go/features/payment/presentation/widgets/payment_column.dart';
+import 'package:food_go/features/payment/presentation/widgets/price_details_section.dart';
 
 
-class OrderViewBody extends StatelessWidget {
-  const OrderViewBody({super.key});
+class PaymentViewBody extends StatelessWidget {
+  const PaymentViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

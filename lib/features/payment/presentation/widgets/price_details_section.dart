@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_go/core/utils/colors.dart';
-import 'package:food_go/features/order/presentation/widgets/bold_price_row.dart';
-import 'package:food_go/features/order/presentation/widgets/price_row.dart';
+import 'package:food_go/features/payment/presentation/widgets/bold_price_row.dart';
+import 'package:food_go/features/payment/presentation/widgets/price_row.dart';
 
 class PriceDetailsSection extends StatelessWidget {
   const PriceDetailsSection({

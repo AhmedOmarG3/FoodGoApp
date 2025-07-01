@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_go/core/utils/colors.dart';
-import 'package:food_go/features/order/presentation/views/order_view.dart';
+import 'package:food_go/features/payment/presentation/views/order_view.dart';
 import 'package:food_go/features/home/presentation/widgets/custom_button.dart';
 import 'package:go_router/go_router.dart';
 

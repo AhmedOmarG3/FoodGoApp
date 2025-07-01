@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_go/core/utils/colors.dart';
-import 'package:food_go/features/order/presentation/widgets/visa_container.dart';
+import 'package:food_go/features/payment/presentation/widgets/visa_container.dart';
 
 class PaymentColumn extends StatefulWidget {
   const PaymentColumn({super.key});
