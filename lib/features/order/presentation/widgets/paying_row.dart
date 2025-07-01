@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_go/core/utils/colors.dart';
 import 'package:food_go/core/utils/styles.dart';
 import 'package:food_go/features/home/presentation/widgets/custom_button.dart';
+import 'package:food_go/features/order/presentation/widgets/success_dialog.dart';
 
 class PayingRow extends StatelessWidget {
   const PayingRow({
@@ -44,7 +45,12 @@ class PayingRow extends StatelessWidget {
               heig: 0.07,
               txet: 'Pay Now',
               color: kTextColor,
-              onPressed: () {})
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) =>const SuccessDialog(),
+                );
+              })
         ],
       ),
     );
