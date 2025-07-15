@@ -1,3 +1,4 @@
+import 'package:food_go/features/home/presentation/views/favourite_view.dart';
 import 'package:food_go/features/home/presentation/views/home_view.dart';
 import 'package:food_go/features/payment/presentation/views/payment_view.dart';
 import 'package:food_go/features/home/presentation/views/product_details_view.dart';
@@ -21,6 +22,9 @@ abstract class AppRouter {
       ),GoRoute(
         path: PaymentView.routeName,
         builder: (context, state) => const PaymentView(),
+      ),GoRoute(
+        path: FavouriteView.routeName,
+        builder: (context, state) => const FavouriteView(),
       ),
       // Add more routes here
     ],

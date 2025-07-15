@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:food_go/core/constants/constants.dart';
+import 'package:food_go/core/utils/app_images.dart';
 import 'package:food_go/core/utils/colors.dart';
 import 'package:food_go/core/utils/styles.dart';
+import 'package:food_go/features/home/data/models/product_model.dart';
 import 'package:food_go/features/home/presentation/views/product_details_view.dart';
 import 'package:food_go/features/home/presentation/widgets/favorite_row.dart';
 import 'package:go_router/go_router.dart';
 
 class GridViewItem extends StatelessWidget {
-  const GridViewItem({super.key});
-
+  const GridViewItem({super.key, required this.productModel});
+ final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -26,18 +28,18 @@ class GridViewItem extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Image.asset(
-              'assets/images/image 1.png',
+              productModel.image,
               height: height(context) * 0.12,
             ),
             const SizedBox(
               height: 5,
             ),
-            Text('Cheeseburger',
+            Text(productModel.title,
                 style: Styles.textStyle20.copyWith(
                     fontSize: 14,
                     color: kTextColor,
                     fontWeight: FontWeight.bold)),
-            Text("Wendy's Burger",
+            Text(productModel.subtitle,
                 style: Styles.textStyle20
                     .copyWith(fontSize: 14, color: kTextColor)),
             FavoriteRow(),

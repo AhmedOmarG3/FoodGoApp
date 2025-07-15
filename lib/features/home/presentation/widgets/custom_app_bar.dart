@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_go/core/utils/app_images.dart';
 import 'package:food_go/core/utils/styles.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -22,7 +23,7 @@ class CustomAppBar extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        Image.asset('assets/images/Mask group.png')
+        Image.asset(AppImages.imagesProfile)
       ],
     );
   }

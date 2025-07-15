@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_go/core/constants/constants.dart';
+import 'package:food_go/core/utils/app_images.dart';
 
 class ImagesRow extends StatelessWidget {
   const ImagesRow({
@@ -18,14 +19,14 @@ class ImagesRow extends StatelessWidget {
           children: [
             Image.asset(
               height: height(context) * 0.3,
-              'assets/images/image 2.png',
+              AppImages.imagesSand2,
               fit: BoxFit.fill,
             ),
             Positioned(
               left: 100,
               child: Image.asset(
                 height: height(context) * 0.2,
-                'assets/images/image 1.png',
+                AppImages.imagesSand1,
                 fit: BoxFit.fill,
               ),
             ),

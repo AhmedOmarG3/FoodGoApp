@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_go/core/utils/app_images.dart';
 import 'package:food_go/core/utils/colors.dart';
 import 'package:food_go/features/payment/presentation/widgets/visa_container.dart';
 
@@ -25,7 +26,7 @@ class _PaymentColumnState extends State<PaymentColumn> {
           titleColor: Colors.white,
           title: 'credit card',
           subtitle: '5105 **** **** 0505',
-          imagePath: 'assets/images/image 14.png',
+          imagePath: AppImages.imagesMastercard,
           value: 'credit',
           groupValue: selectedValue,
           onChanged: (value) {
@@ -40,7 +41,7 @@ class _PaymentColumnState extends State<PaymentColumn> {
           titleColor: kTextColor,
           title: 'Debit card',
           subtitle: '3566 **** **** 0505',
-          imagePath: 'assets/images/image 13.png',
+          imagePath: AppImages.imagesVisa,
           value: 'debit',
           groupValue: selectedValue,
           onChanged: (value) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_go/core/constants/constants.dart';
+import 'package:food_go/core/utils/app_images.dart';
 import 'package:food_go/features/home/presentation/widgets/details_colum.dart';
 import 'package:food_go/features/home/presentation/widgets/details_view_app_bar.dart';
 import 'package:food_go/features/home/presentation/widgets/order_row.dart';
@@ -19,7 +20,7 @@ class ProductDetailsViewBody extends StatelessWidget {
           const DetailsViewAppBar(),
           Image.asset(
             fit: BoxFit.fill,
-            'assets/images/image 1.png',
+            AppImages.imagesSand1,
             height: height(context) * 0.35,
             width: width(context) * 0.7,
           ),

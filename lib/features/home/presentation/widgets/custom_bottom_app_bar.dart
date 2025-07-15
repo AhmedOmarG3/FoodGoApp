@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_go/core/utils/app_images.dart';
 import 'package:food_go/core/utils/colors.dart';
+import 'package:food_go/features/home/presentation/views/favourite_view.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomBottomAppBar extends StatelessWidget {
   const CustomBottomAppBar({
@@ -18,18 +21,21 @@ class CustomBottomAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-                icon: Image.asset('assets/images/home.png'),
+                icon: Image.asset(AppImages.imagesHome),
                 onPressed: () {}),
             IconButton(
-                icon: Image.asset('assets/images/user.png'),
+                icon: Image.asset(AppImages.imagesUser),
                 onPressed: () {}),
             const SizedBox(width: 40), // space for FAB
             IconButton(
-                icon: Image.asset('assets/images/comment.png'),
+                icon: Image.asset(AppImages.imagesComment),
                 onPressed: () {}),
             IconButton(
                 icon: const Icon(Icons.favorite, color: Colors.white),
-                onPressed: () {}),
+                onPressed: () {
+
+                  GoRouter.of(context).push(FavouriteView.routeName);
+                }),
           ],
         ),
       ),
