@@ -23,8 +23,9 @@ class _SplashViewState extends State<SplashView> {
   @override
 void initState() {
   super.initState();
-  Future.delayed(const Duration(seconds: 3), () {
-   GoRouter.of(context).push( HomeView.routeName);
+  Future.delayed(const Duration(seconds: 2), () {
+    if (mounted){
+   GoRouter.of(context).push( HomeView.routeName);}
   });
 }
   @override

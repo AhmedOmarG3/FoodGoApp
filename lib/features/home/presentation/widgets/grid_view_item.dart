@@ -42,7 +42,7 @@ class GridViewItem extends StatelessWidget {
             Text(productModel.subtitle,
                 style: Styles.textStyle20
                     .copyWith(fontSize: 14, color: kTextColor)),
-            FavoriteRow(),
+            FavoriteRow(productModel: productModel,),
           ]),
         ),
       ),
