@@ -4,23 +4,27 @@ import 'package:food_go/features/home/data/models/product_model.dart';
 part 'favourite_state.dart';
 
 class FavouriteCubit extends Cubit<FavouriteState> {
-  FavouriteCubit() : super(FavouriteInitial());
+  FavouriteCubit() : super(EmptyFavouriteState());
 
  List<ProductModel> favouriteList=[];
 
  void addToFavourite(ProductModel productModel){
    favouriteList.add(productModel);
-   emit(FavouriteAddedState(
+   emit(HasFavouriteState(
     favouriteList: favouriteList
    ));
  }
 
 
  void removeFromFavourite(ProductModel productModel){
-   favouriteList.remove(productModel);
-   emit(FavouriteAddedState(
-       favouriteList: favouriteList
-   ));
+  favouriteList.remove(productModel);
+if (favouriteList.isEmpty) {
+  emit(EmptyFavouriteState());
+} else {
+  emit(HasFavouriteState(favouriteList: favouriteList));
+}
+
+   
  }
 
 
