@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_go/features/Auth/presentation/views/login_view.dart';
 import 'package:food_go/features/home/presentation/views/home_view.dart';
 import 'package:food_go/features/splash/presentation/widgets/splash_view_body.dart';
 import 'package:go_router/go_router.dart';
@@ -25,7 +26,7 @@ void initState() {
   super.initState();
   Future.delayed(const Duration(seconds: 2), () {
     if (mounted){
-   GoRouter.of(context).push( HomeView.routeName);}
+   GoRouter.of(context).push( LoginView.routeName);}
   });
 }
   @override

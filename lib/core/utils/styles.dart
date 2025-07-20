@@ -11,4 +11,19 @@ class Styles {
     fontSize: 20,
     color: Colors.grey,
   );
+
+  static TextStyle textStyle18 = const TextStyle(
+    fontSize: 18,
+    color: Colors.white,
+    fontWeight: FontWeight.bold
+  );static TextStyle textStyle16 = const TextStyle(
+    fontSize: 16,
+    color: Color(0xff964F4F),
+    fontWeight: FontWeight.w500
+  );
+  static TextStyle textStyle28 = const TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 }
