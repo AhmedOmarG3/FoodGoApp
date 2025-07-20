@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_go/core/constants/constants.dart';
 import 'package:food_go/core/utils/styles.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onPressed, required this.text});
+class CustomAuthButton extends StatelessWidget {
+  const CustomAuthButton({super.key, required this.onPressed, required this.text});
   final void Function() onPressed;
   final String text;
   @override

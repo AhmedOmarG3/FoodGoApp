@@ -1,3 +1,4 @@
+import 'package:food_go/features/Auth/presentation/views/forget_password_view.dart';
 import 'package:food_go/features/Auth/presentation/views/login_view.dart';
 import 'package:food_go/features/Auth/presentation/views/sign_up_view.dart';
 import 'package:food_go/features/home/presentation/views/favourite_view.dart';
@@ -34,6 +35,10 @@ abstract class AppRouter {
       GoRoute(
         path: SignUpView.routeName,
         builder: (context, state) => const SignUpView(),
+      ),
+      GoRoute(
+        path: ForgetPasswordView.routeName,
+        builder: (context, state) => const ForgetPasswordView(),
       ),
       // Add more routes here
     ],

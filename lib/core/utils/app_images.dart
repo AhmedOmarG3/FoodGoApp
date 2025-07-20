@@ -10,6 +10,10 @@ class AppImages {
   /// assets/images/comment.png
   static const String imagesComment = "assets/images/comment.png";
 
+  /// Assets for imagesForgetPassword
+  /// assets/images/forget_password.png
+  static const String imagesForgetPassword = "assets/images/forget_password.png";
+
   /// Assets for imagesHome
   /// assets/images/home.png
   static const String imagesHome = "assets/images/home.png";

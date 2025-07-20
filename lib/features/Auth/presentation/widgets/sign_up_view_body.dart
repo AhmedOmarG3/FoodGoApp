@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:food_go/core/constants/constants.dart';
 import 'package:food_go/core/utils/app_images.dart';
 import 'package:food_go/core/utils/styles.dart';
+import 'package:food_go/features/Auth/presentation/views/login_view.dart';
+import 'package:food_go/features/Auth/presentation/views/sign_up_view.dart';
 import 'package:food_go/features/Auth/presentation/widgets/auth_text_field.dart';
 import 'package:food_go/features/Auth/presentation/widgets/custom_button.dart';
+import 'package:food_go/features/Auth/presentation/widgets/custom_image.dart';
 import 'package:food_go/features/Auth/presentation/widgets/google_signing_button.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});
@@ -14,12 +18,7 @@ class SignUpViewBody extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-        Image.asset(
-          AppImages.imagesSignUp,
-          height: height(context) * 0.2583,
-          width: width(context),
-          fit: BoxFit.fill,
-        ),
+        CustomImage(imagePath: AppImages.imagesSignUp),
         const SizedBox(
           height: 20,
         ),
@@ -31,19 +30,19 @@ class SignUpViewBody extends StatelessWidget {
         const SizedBox(
           height: 12,
         ),
-      const  AuthTextField(
+        const AuthTextField(
           hint: 'Full Name',
         ),
-      const  AuthTextField(
+        const AuthTextField(
           hint: 'Email',
         ),
-      const  AuthTextField(
+        const AuthTextField(
           hint: 'Password',
         ),
-     const   AuthTextField(
+        const AuthTextField(
           hint: 'Confirm Password',
         ),
-        CustomButton(
+        CustomAuthButton(
           onPressed: () {},
           text: 'Create Account',
         ),
@@ -51,10 +50,15 @@ class SignUpViewBody extends StatelessWidget {
           text: 'Sign up with Google',
           onPressed: () {},
         ),
-    const    SizedBox(
+        const SizedBox(
           height: 30,
         ),
-        Text('Already have an account? Sign In', style: Styles.textStyle16),
+        GestureDetector(
+            onTap: () {
+              GoRouter.of(context).go(LoginView.routeName);
+            },
+            child: Text('Already have an account? Sign In',
+                style: Styles.textStyle16)),
         const SizedBox(
           height: 30,
         )
