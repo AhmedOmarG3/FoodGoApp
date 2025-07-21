@@ -9,6 +9,7 @@ import 'package:food_go/features/Auth/presentation/widgets/auth_text_field.dart'
 import 'package:food_go/features/Auth/presentation/widgets/custom_button.dart';
 import 'package:food_go/features/Auth/presentation/widgets/custom_image.dart';
 import 'package:food_go/features/Auth/presentation/widgets/google_signing_button.dart';
+import 'package:food_go/features/home/presentation/views/home_view.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -58,7 +59,9 @@ class LoginViewBody extends StatelessWidget {
         height: 10,
       ),
       CustomAuthButton(
-        onPressed: () {},
+        onPressed: () {
+          GoRouter.of(context).push(HomeView.routeName);
+        },
         text: 'Sign In',
       ),
       GoogleSigningButton(

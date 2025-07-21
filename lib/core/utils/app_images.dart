@@ -18,6 +18,14 @@ class AppImages {
   /// assets/images/home.png
   static const String imagesHome = "assets/images/home.png";
 
+  /// Assets for imagesImage15
+  /// assets/images/image15.png
+  static const String imagesImage15 = "assets/images/image15.png";
+
+  /// Assets for imagesImage16
+  /// assets/images/image16.png
+  static const String imagesImage16 = "assets/images/image16.png";
+
   /// Assets for imagesLogin
   /// assets/images/login.png
   static const String imagesLogin = "assets/images/login.png";
