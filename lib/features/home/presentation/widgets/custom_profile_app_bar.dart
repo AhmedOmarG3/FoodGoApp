@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CustomProfileAppBar extends StatelessWidget {
   const CustomProfileAppBar({super.key});
@@ -10,11 +9,9 @@ class CustomProfileAppBar extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10),
       child: Row(
         children: [
-          IconButton(
-              onPressed: () {
-                GoRouter.of(context).pop();
-              },
-              icon: const Icon(Icons.arrow_back, color: Colors.white)),
+        const  BackButton(
+            color: Colors.white,
+          ),
           const Spacer(),
           IconButton(
               onPressed: () {},

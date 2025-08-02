@@ -4,6 +4,7 @@ import 'package:food_go/features/Auth/presentation/views/sign_up_view.dart';
 import 'package:food_go/features/home/presentation/views/favourite_view.dart';
 import 'package:food_go/features/home/presentation/views/home_view.dart';
 import 'package:food_go/features/home/presentation/views/user_profile_view.dart';
+import 'package:food_go/features/payment/presentation/widgets/add_payment_bottom_sheet.dart';
 import 'package:food_go/features/payment/presentation/views/payment_view.dart';
 import 'package:food_go/features/home/presentation/views/product_details_view.dart';
 import 'package:food_go/features/splash/presentation/views/splash_view.dart';

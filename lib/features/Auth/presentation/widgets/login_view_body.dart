@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:food_go/core/constants/constants.dart';
 import 'package:food_go/core/utils/app_images.dart';
@@ -17,67 +19,72 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-      CustomImage(
-        imagePath: AppImages.imagesLogin,
-      ),
-      const SizedBox(
-        height: 20,
-      ),
-      Text(
-        textAlign: TextAlign.center,
-        'Welcome back to\n Foodgo!',
-        style: Styles.textStyle28,
-      ),
-      const SizedBox(
-        height: 12,
-      ),
-      AuthTextField(
-        hint: 'Email',
-      ),
-      AuthTextField(
-        hint: 'Password',
-      ),
-      GestureDetector(
-        onTap: () {
-          GoRouter.of(context).push(ForgetPasswordView.routeName);
-        },
-        child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: Text(
-              'Forgot Password?',
-              style: Styles.textStyle20.copyWith(
-                  color: kAuthTextColor,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 18),
-            ),
+    return SingleChildScrollView(
+      child: SizedBox(
+        height: height(context),
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          CustomImage(
+            imagePath: AppImages.imagesLogin,
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            'Welcome back to\n Foodgo!',
+            style: Styles.textStyle28,
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          AuthTextField(
+            hint: 'Email',
+          ),
+          AuthTextField(
+            hint: 'Password',
+          ),
+          GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(ForgetPasswordView.routeName);
+            },
+            child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: Text(
+                  'Forgot Password?',
+                  style: Styles.textStyle20.copyWith(
+                      color: kAuthTextColor,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18),
+                ),
+              ),
+            ]),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          CustomAuthButton(
+            onPressed: () {
+              GoRouter.of(context).push(HomeView.routeName);
+            },
+            text: 'Sign In',
+          ),
+          GoogleSigningButton(
+            text: 'Sign in with Google',
+            onPressed: () {},
+          ),
+          const Spacer(),
+          GestureDetector(
+              onTap: () {
+                GoRouter.of(context).push(SignUpView.routeName);
+              },
+              child: Text('Don\'t have an account? Sign Up',
+                  style: Styles.textStyle16)),
+          const SizedBox(
+            height: 30,
+          )
         ]),
       ),
-      SizedBox(
-        height: 10,
-      ),
-      CustomAuthButton(
-        onPressed: () {
-          GoRouter.of(context).push(HomeView.routeName);
-        },
-        text: 'Sign In',
-      ),
-      GoogleSigningButton(
-        text: 'Sign in with Google',
-        onPressed: () {},
-      ),
-      const Spacer(),
-      GestureDetector(
-          onTap: () {
-            GoRouter.of(context).push(SignUpView.routeName);
-          },
-          child: Text('Don\'t have an account? Sign Up',
-              style: Styles.textStyle16)),
-      const SizedBox(
-        height: 30,
-      )
-    ]);
+    );
   }
 }

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_go/core/constants/constants.dart';
 import 'package:food_go/core/utils/app_images.dart';
 import 'package:food_go/core/utils/styles.dart';
 import 'package:food_go/features/Auth/presentation/views/login_view.dart';
-import 'package:food_go/features/Auth/presentation/views/sign_up_view.dart';
 import 'package:food_go/features/Auth/presentation/widgets/auth_text_field.dart';
 import 'package:food_go/features/Auth/presentation/widgets/custom_button.dart';
 import 'package:food_go/features/Auth/presentation/widgets/custom_image.dart';
@@ -18,7 +16,7 @@ class SignUpViewBody extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-        CustomImage(imagePath: AppImages.imagesSignUp),
+        const CustomImage(imagePath: AppImages.imagesSignUp),
         const SizedBox(
           height: 20,
         ),

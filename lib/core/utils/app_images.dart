@@ -30,9 +30,17 @@ class AppImages {
   /// assets/images/login.png
   static const String imagesLogin = "assets/images/login.png";
 
+  /// Assets for imagesMaskGroup
+  /// assets/images/mask_group.png
+  static const String imagesMaskGroup = "assets/images/mask_group.png";
+
   /// Assets for imagesMastercard
   /// assets/images/mastercard.png
   static const String imagesMastercard = "assets/images/mastercard.png";
+
+  /// Assets for imagesMobile paymentsRafiki
+  /// assets/images/mobile payments-rafiki.png
+  static const String imagesMobilepayments = "assets/images/mobile payments-rafiki.png";
 
   /// Assets for imagesProfile
   /// assets/images/profile.png
