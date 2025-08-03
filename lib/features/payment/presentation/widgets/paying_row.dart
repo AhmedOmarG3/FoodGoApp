@@ -48,7 +48,13 @@ class PayingRow extends StatelessWidget {
               onPressed: () {
                 showDialog(
                   context: context,
-                  builder: (context) =>const SuccessDialog(),
+                  builder: (context) => SuccessDialog(
+                    buttonTitle: 'Go Back',
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    title:" Your payment was successful.\nA receipt for this purchase has \nbeen sent to your email.",
+                  ),
                 );
               })
         ],
