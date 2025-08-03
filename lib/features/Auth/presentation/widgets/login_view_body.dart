@@ -27,7 +27,7 @@ class LoginViewBody extends StatefulWidget {
 
 class _LoginViewBodyState extends State<LoginViewBody> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
- TextEditingController email = TextEditingController();
+  TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -35,31 +35,28 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       child: SizedBox(
         height: height(context),
         child: BlocListener<AuthCubit, AuthState>(
-        listener: (context, state) {
-          if (state is AuthLoading) {
-            showDialog(
-              context: context,
-              barrierDismissible: false,
-              builder: (context) =>
-                  const Center(child: CircularProgressIndicator()),
-            );
-          } else {
-            Navigator.of(context, rootNavigator: true).pop();
-
-            if (state is AuthSuccess) {
-              
-                    GoRouter.of(context).push(HomeView.routeName);
-                 
-              
-            }
-
-            if (state is AuthFailure) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(state.error)),
+          listener: (context, state) {
+            if (state is AuthLoading) {
+              showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (context) =>
+                    const Center(child: CircularProgressIndicator()),
               );
+            } else {
+              Navigator.of(context, rootNavigator: true).pop();
+
+              if (state is AuthSuccess) {
+                GoRouter.of(context).push(HomeView.routeName);
+              }
+
+              if (state is AuthFailure) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(state.error)),
+                );
+              }
             }
-          }
-        },
+          },
           child: Form(
             key: formKey,
             child:
@@ -78,14 +75,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               const SizedBox(
                 height: 12,
               ),
-              AuthTextField(controller: 
-              email,
-              validator: AuthValidators.emailValidator(),
+              AuthTextField(
+                controller: email,
+                validator: AuthValidators.emailValidator(),
                 hint: 'Email',
               ),
               AuthTextField(
                 controller: password,
-                 validator: AuthValidators.passwordValidator(),
+                validator: AuthValidators.passwordValidator(),
                 hint: 'Password',
               ),
               GestureDetector(
@@ -120,8 +117,10 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 text: 'Sign In',
               ),
               GoogleSigningButton(
-                text: 'Sign in with Google',
-                onPressed: () {},
+                text: 'Sign In with Google',
+                onPressed: () {
+                  BlocProvider.of<AuthCubit>(context).signInWithGoogle();
+                },
               ),
               const Spacer(),
               GestureDetector(

@@ -103,9 +103,11 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               text: 'Create Account',
             ),
             GoogleSigningButton(
-              text: 'Sign up with Google',
-              onPressed: () {},
-            ),
+  text: 'Sign up with Google',
+  onPressed: () {
+    BlocProvider.of<AuthCubit>(context).signInWithGoogle();
+  },
+),
             const SizedBox(
               height: 30,
             ),
