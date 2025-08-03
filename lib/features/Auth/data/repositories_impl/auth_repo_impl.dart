@@ -35,4 +35,16 @@ class AuthRepositoryImpl implements AuthRepository{
     return const Left('An unexpected error occurred during login.');
   }
   }
+
+  @override
+Future<Either<String, Unit>> resetPassword(String email) async {
+  try {
+    await _firebaseAuth.sendPasswordResetEmail(email: email);
+    return const Right(unit);
+  } on FirebaseAuthException catch (e) {
+    return Left(AuthErrorHandler.handleFirebaseAuthError(e));
+  } catch (_) {
+    return const Left('An unexpected error occurred while resetting password.');
+  }
+}
 }

@@ -7,7 +7,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   AuthCubit({required this.authRepository}) : super(AuthInitial());
 
-  Future<void> login(String email, String password) async {
+  Future<void> login({required String email,required String password}) async {
     emit(AuthLoading());
     final result = await authRepository.login(email, password);
     result.fold(
@@ -24,4 +24,15 @@ class AuthCubit extends Cubit<AuthState> {
       (success) => emit(AuthSuccess()),
     );
   }
+
+  Future<void> resetPassword(String email) async {
+  emit(AuthLoading());
+
+  final result = await authRepository.resetPassword(email);
+
+  result.fold(
+    (failureMessage) => emit(AuthFailure(error: failureMessage)),
+    (_) => emit(AuthResetPasswordSuccess('Password reset email sent! Check your inbox.')),
+  );
+}
 }

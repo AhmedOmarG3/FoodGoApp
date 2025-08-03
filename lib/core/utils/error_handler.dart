@@ -20,6 +20,8 @@ class AuthErrorHandler {
         return 'No user found with this email.';
       case 'wrong-password':
         return 'Incorrect password. Please try again.';
+      case 'invalid-credential':
+        return 'The email or password is incorrect. Please try again.';
 
       // Common errors
       case 'too-many-requests':
