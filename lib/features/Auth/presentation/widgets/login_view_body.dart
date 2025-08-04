@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_go/core/constants/constants.dart';
@@ -61,7 +59,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             key: formKey,
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-              CustomImage(
+           const CustomImage(
                 imagePath: AppImages.imagesLogin,
               ),
               const SizedBox(
@@ -102,7 +100,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                 ]),
               ),
-              SizedBox(
+            const  SizedBox(
                 height: 10,
               ),
               CustomAuthButton(

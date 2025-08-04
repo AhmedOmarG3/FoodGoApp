@@ -27,18 +27,18 @@ final ProductModel productModel;
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Image.asset(
-                productModel.image,
+                productModel.image!,
                 height: height(context) * 0.12,
               ),
               const SizedBox(
                 height: 5,
               ),
-              Text(productModel.title,
+              Text(productModel.name!,
                   style: Styles.textStyle20.copyWith(
                       fontSize: 14,
                       color: kTextColor,
                       fontWeight: FontWeight.bold)),
-              Text(productModel.subtitle,
+              Text(productModel.description!,
                   style: Styles.textStyle20
                       .copyWith(fontSize: 14, color: kTextColor)),
              const FavoriteItemLastRow(),

@@ -2,12 +2,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_go/core/utils/app_router.dart';
+import 'package:food_go/core/utils/service_locator.dart';
 import 'package:food_go/features/Auth/data/repositories_impl/auth_repo_impl.dart';
 import 'package:food_go/features/Auth/presentation/blocs/auth_cubit/auth_cubit.dart';
+import 'package:food_go/features/home/data/repo_impl/get_meals_repo_impl.dart';
+import 'package:food_go/features/home/presentation/controllers/all_meals_cubit/meals_cubit.dart';
 import 'package:food_go/features/home/presentation/controllers/favourite_cubit/favourite_cubit.dart';
 import 'package:food_go/firebase_options.dart';
 
 void main() async {
+  setupServiceLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -27,6 +31,8 @@ class FoodGo extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => AuthCubit(authRepository: AuthRepositoryImpl()),
+        ),BlocProvider(
+          create: (context) => MealsCubit( getMealsRepoImpl: getIt.get<GetMealsRepoImpl>()),
         )
       ],
       child: MaterialApp.router(
